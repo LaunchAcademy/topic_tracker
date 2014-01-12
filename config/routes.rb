@@ -1,5 +1,6 @@
 TopicTracker::Application.routes.draw do
   resources :welcome
+  resources :topics
   root 'welcome#index'
   get '/auth/:provider/callback', to: 'sessions#create'
 
