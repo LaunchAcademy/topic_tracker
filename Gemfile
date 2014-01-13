@@ -41,11 +41,11 @@ group :test, :development do
   gem 'pry-rails'
   gem 'quiet_assets'
   gem 'dotenv-rails'
-  
+
 end
 
 group :test do
-  gem 'capybara'    
+  gem 'capybara'
   gem 'shoulda-matchers'
   gem 'valid_attribute'
   gem 'launchy'

@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 20140112212411) do
 
   create_table "topics", force: true do |t|
     t.integer  "user_id"
-    t.integer  "session_id"
     t.string   "title",       null: false
     t.text     "description", null: false
     t.datetime "created_at"

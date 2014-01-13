@@ -1,4 +1,5 @@
 class Topic < ActiveRecord::Base
   belongs_to :user
-  belongs_to :session
+  validates_presence_of :title
+  validates_presence_of :description
 end
