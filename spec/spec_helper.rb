@@ -41,14 +41,14 @@ RSpec.configure do |config|
   config.order = "random"
 
     OmniAuth.config.test_mode = true
-    OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
-    :provider => 'twitter',
+    OmniAuth.config.mock_auth[:provider] = OmniAuth::AuthHash.new({
+    :provider => 'github',
     :uid => '123545'
     # etc.
   })
 
-    OmniAuth.config.add_mock(:twitter, {:uid => '12345'})
+    OmniAuth.config.add_mock(:provider, {:uid => '12345'})
 
-    OmniAuth.config.mock_auth[:twitter] = :invalid_credentials
+    OmniAuth.config.mock_auth[:provider] = :invalid_credentials
 
 end
