@@ -1,6 +1,8 @@
 TopicTracker::Application.routes.draw do
   root 'welcome#index'
   get '/auth/:provider/callback', to: 'sessions#create'
+  get "/signout" => "sessions#destroy", :as => :signout
+
   resources :topics
 
   # The priority is based upon order of creation: first created -> highest priority.
