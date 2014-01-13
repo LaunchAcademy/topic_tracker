@@ -1,8 +1,7 @@
 TopicTracker::Application.routes.draw do
-  resources :welcome
-  resources :topics
   root 'welcome#index'
   get '/auth/:provider/callback', to: 'sessions#create'
+  resources :topics
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
