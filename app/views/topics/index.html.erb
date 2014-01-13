@@ -1,0 +1,11 @@
+<h1>Current Topics</h1>
+<hr>
+<% @topics.each do |topic| %>
+  <h2><%= link_to "#{topic.title}", topic_path(topic) %></h2>
+  <%= topic.description %><br><br>
+  <%= link_to "Edit", edit_topic_path(topic) %>
+  <%= link_to "Delete", topic, method: :delete %>
+  <br><br><hr>
+<% end %>
+<br><br>
+<%= button_to 'Create a Topic', '/topics/new', method: :get %>
