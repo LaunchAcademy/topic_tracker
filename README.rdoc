@@ -1,28 +1,8 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+If you're getting a 404 error when you try to sign in to via GitHub, then you need to set your ENV['GITHUB_KEY'] and ENV['GITHUB_SECRET'] variables in .env
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+  *Go to your GitHub & login
+  *Go to 'Account Settings'
+  *Go to 'Applications'
+  *Register a new application. Once created, your id and secret_id will be shown.

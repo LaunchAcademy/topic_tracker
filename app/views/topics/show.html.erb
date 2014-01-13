@@ -1,0 +1,7 @@
+<h2><em>Topic created on: </em> <%= @topic.created_at.to_formatted_s(:long) %></h2>
+<strong>The Issue: </strong><br>
+<%= @topic.title %><br>
+<strong>Description:</strong><br>
+<%= @topic.description %>
+<br><br><hr>
+<%= link_to 'Edit', edit_topic_path(@topic) %> <%= link_to 'Back', topics_path %>
