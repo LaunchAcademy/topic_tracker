@@ -6,6 +6,19 @@
   <%= link_to "Edit", edit_topic_path(topic) %>
   <%= link_to "Delete", topic, method: :delete %>
   <br><br><hr>
-<% end %>
+
+ <% if current_user != nil %>
+      <% if topic.has_vote_from?(current_user) %>
+        <%= button_to "Remove Vote", topic_vote_path(topic, topic.vote_from(current_user)),
+          method: :delete,
+          form: { data: { 'vote-button' => 'delete' } } %>
+      <% else %>
+        <%= button_to "Vote Up", topic_votes_path(topic),
+          method: :post,
+          form: { data: { 'vote-button' => 'create' } } %>
+      <% end %>
+    <% end %>
+
+  <% end %>
 <br><br>
 <%= button_to 'Create a Topic', '/topics/new', method: :get %>

@@ -3,7 +3,9 @@ TopicTracker::Application.routes.draw do
   get '/auth/:provider/callback', to: 'sessions#create'
   get "/signout" => "sessions#destroy", as: :signout
 
-  resources :topics
+  resources :topics do
+    resources :votes
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
