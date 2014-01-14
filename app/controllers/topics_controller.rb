@@ -1,4 +1,6 @@
 class TopicsController < ApplicationController
+  before_filter :user_signed_in, except: :index
+  before_filter :user_made_post, only: [:edit, :update, :destroy]
   def index
     @topics = Topic.all
   end
@@ -13,8 +15,9 @@ class TopicsController < ApplicationController
 
   def create
     @topic = Topic.new(topic_params)
+    @topic.user = current_user
     if @topic.save
-      redirect_to topic_path(@topic), notice: 'Your topic was successfully created!'
+      redirect_to topics_path, notice: 'Your topic was successfully created!'
     else
       render :new
     end
@@ -25,17 +28,19 @@ class TopicsController < ApplicationController
   end
 
   def update
-    @topic = Topic.new(topic_params)
+    set_topic
     if @topic.update(topic_params)
-      redirect_to topic_path(@topic), notice: 'Your topic was successfully updated!'
+      redirect_to topics_path, notice: 'Your topic was successfully updated!'
     else
       render :edit
     end
   end
 
   def destroy
-    set_topic.destroy
-    redirect_to topic_path, notice: 'Topic successfully destroyed'
+    set_topic
+    if @topic.destroy
+      redirect_to root_path, notice: 'Topic successfully destroyed'
+    end
   end
 
   private
@@ -45,6 +50,15 @@ class TopicsController < ApplicationController
   end
 
   def topic_params
-    params.require(:topic).permit(:title, :description)
+    params.require(:topic).permit(:title, :description, :category)
+  end
+
+  def user_signed_in
+    redirect_to root_path, notice: 'Must sign in!' if current_user == nil
+  end
+
+  def user_made_post
+    set_topic
+    redirect_to root_path, notice: 'Not your post!' if @topic.user != current_user
   end
 end
