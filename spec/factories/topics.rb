@@ -3,8 +3,8 @@
 FactoryGirl.define do
   factory :topic do
     user
-    sequence(:session_id) {|n| n }
-    title "MyString"
-    description "MyText"
+    title "Example Title"
+    description "Example Description"
+
   end
 end

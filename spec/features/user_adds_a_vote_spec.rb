@@ -12,7 +12,7 @@ feature 'user votes for a topic', %Q{
 
   scenario 'user votes for a topic' do
     visit root_path
-    click_link 'Sign In With GitHub'
+    click_on 'Sign In With GitHub'
     click_button 'Create a Topic'
     fill_in 'Title', with: 'Example Title'
     fill_in 'Description', with: 'Example Description'
@@ -25,7 +25,7 @@ feature 'user votes for a topic', %Q{
 
   scenario 'user votes for a topic' do
     visit root_path
-    click_link 'Sign In With GitHub'
+    click_on 'Sign In With GitHub'
     click_button 'Create a Topic'
     fill_in 'Title', with: 'Example Title'
     fill_in 'Description', with: 'Example Description'

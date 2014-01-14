@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
     create! do |user|
       user.provider = auth_hash["provider"]
       user.uid = auth_hash["uid"]
-      user.name = auth_hash["info"]["nickname"]
+      user.name = auth_hash["info"]["name"]
     end
   end
 end

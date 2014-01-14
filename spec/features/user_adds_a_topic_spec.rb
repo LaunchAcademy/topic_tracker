@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-feature 'User adds a topic', %q(
+feature 'User adds a topic', %q{
 As a user,
 I would like to add a topic,
-so that it can be discussed during a workshop.) do
+so that it can be discussed during a workshop.} do
 # Acceptance Criteria
 # I go to the “Add a Topic” page and enter the following information into a form
 # The topic headline
@@ -13,7 +13,7 @@ so that it can be discussed during a workshop.) do
 
   scenario 'User creates a valid topic' do
     visit root_path
-    click_link 'Sign In With GitHub'
+    click_on 'Sign In With GitHub'
     click_button 'Create a Topic'
     fill_in 'Title', with: 'Example Title'
     fill_in 'Description', with: 'Example Description'
