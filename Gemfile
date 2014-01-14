@@ -23,7 +23,6 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -48,6 +47,7 @@ group :test do
   gem 'shoulda-matchers'
   gem 'valid_attribute'
   gem 'launchy'
+  gem 'coveralls', require: false
 end
 
 gem 'foundation-rails'

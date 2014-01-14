@@ -3,6 +3,11 @@ ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
+require 'capybara/rails'
+require 'capybara/rspec'
+require 'coveralls'
+Coveralls.wear!('rails')
+
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -50,5 +55,4 @@ RSpec.configure do |config|
     OmniAuth.config.add_mock(:provider, {:uid => '12345'})
 
     OmniAuth.config.mock_auth[:provider] = :invalid_credentials
-
 end
