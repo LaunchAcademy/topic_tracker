@@ -16,7 +16,7 @@ feature 'sign in with GitHub', %Q{
     visit root_path
     click_on 'Sign In With GitHub'
 
-    expect(page).to have_content('Signed in as Bob Example!')
+    expect(page).to have_content('Signed in as ')
   end
 
 

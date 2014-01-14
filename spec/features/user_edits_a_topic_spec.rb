@@ -42,4 +42,17 @@ feature 'User edits a topic', %q{
     click_on "Sign In With GitHub"
   end
 
+  scenario 'User attempts to edit a topic when not signed in' do
+    visit root_path
+    click_on 'Sign In With GitHub'
+    click_on 'Create a Topic'
+    fill_in 'Title', with: 'Example Title'
+    fill_in 'Description', with: 'Example Description'
+    click_on 'Create Topic'
+    click_on 'Sign Out'
+    click_on 'Edit'
+
+    expect(page).to have_content('Must sign in!')
+  end
+
 end
