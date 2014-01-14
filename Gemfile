@@ -39,11 +39,7 @@ group :test, :development do
   gem 'pry-rails'
   gem 'quiet_assets'
   gem 'dotenv-rails'
-<<<<<<< HEAD
   gem 'poltergeist'
-
-=======
->>>>>>> original/master
 end
 
 group :test do
