@@ -13,19 +13,19 @@ so that it can be discussed during a workshop.) do
 
   scenario 'User creates a valid topic' do
     visit root_path
-    click_link 'Sign in With GitHub'
-    click_button 'Add a Topic'
+    click_link 'Sign In With GitHub'
+    click_button 'Create a Topic'
     fill_in 'Title', with: 'Example Title'
     fill_in 'Description', with: 'Example Description'
     click_button 'Create Topic'
 
-    expect(page).to have_content('Topic Added Successfully')
+    expect(page).to have_content('Your topic was successfully created!')
   end
 
   scenario 'User attempts to create an invalid topic' do
     visit root_path
-    click_link 'Sign in With Github'
-    click_button 'Add a Topic'
+    click_on 'Sign In With GitHub'
+    click_button 'Create a Topic'
     click_button 'Create Topic'
 
     expect(page).to have_content("can't be blank")

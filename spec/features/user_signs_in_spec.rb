@@ -14,9 +14,9 @@ feature 'sign in with GitHub', %Q{
 
   scenario 'login via github' do
     visit root_path
-    click_link 'Sign In With GitHub'
+    click_on 'Sign In With GitHub'
 
-    expect(page).to have_content('Signed in successfully.')
+    expect(page).to have_content('Signed in as eric!')
   end
 
 

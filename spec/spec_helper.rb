@@ -46,13 +46,9 @@ RSpec.configure do |config|
   config.order = "random"
 
     OmniAuth.config.test_mode = true
-    OmniAuth.config.mock_auth[:provider] = OmniAuth::AuthHash.new({
+    OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
     :provider => 'github',
-    :uid => '123545'
-    # etc.
+    :uid => '123545',
+    :info => { :nickname => 'eric' }
   })
-
-    OmniAuth.config.add_mock(:provider, {:uid => '12345'})
-
-    OmniAuth.config.mock_auth[:provider] = :invalid_credentials
 end
