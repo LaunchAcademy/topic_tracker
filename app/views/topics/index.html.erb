@@ -1,7 +1,7 @@
 <h1>Current Topics</h1>
 <hr>
 <% @topics.each do |topic| %>
-  <h2><%= topic.category %> : <%= link_to "#{topic.title}", topic_path(topic) %></h2>
+  <h2><%= topic.category %> : <%= link_to topic.title, topic_path(topic) %></h2>
   <%= topic.description %><br><br>
   <%= link_to "Edit", edit_topic_path(topic) %>
   <%= link_to "Delete", topic, method: :delete %>
