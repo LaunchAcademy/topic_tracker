@@ -1,8 +1,0 @@
-== README
-
-If you're getting a 404 error when you try to sign in to via GitHub, then you need to set your ENV['GITHUB_KEY'] and ENV['GITHUB_SECRET'] variables in .env
-
-  *Go to your GitHub & login
-  *Go to 'Account Settings'
-  *Go to 'Applications'
-  *Register a new application. Once created, your id and secret_id will be shown.
