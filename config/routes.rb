@@ -1,7 +1,7 @@
 TopicTracker::Application.routes.draw do
   root 'topics#index'
   get '/auth/:provider/callback', to: 'sessions#create'
-  get "/signout" => "sessions#destroy", :as => :signout
+  get "/signout" => "sessions#destroy", as: :signout
 
   resources :topics
 
