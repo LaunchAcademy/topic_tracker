@@ -39,6 +39,7 @@ group :test, :development do
   gem 'pry-rails'
   gem 'quiet_assets'
   gem 'dotenv-rails'
+
 end
 
 group :test do
@@ -49,6 +50,7 @@ group :test do
   gem 'coveralls', require: false
 end
 
+gem 'foundation-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
