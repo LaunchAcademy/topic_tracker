@@ -3,8 +3,8 @@
 FactoryGirl.define do
   factory :topic do
     user
-    title "Example Title"
-    description "Example Description"
 
+    sequence(:title) { |n| "Example #{n} Title" }
+    sequence(:description) { |n| "Example #{n} Description" }
   end
 end

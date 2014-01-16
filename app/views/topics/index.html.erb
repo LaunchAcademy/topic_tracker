@@ -1,3 +1,4 @@
+<% if false %>
 <h1>Current Topics</h1>
 <hr>
 <% @topics.each do |topic| %>
@@ -22,3 +23,4 @@
   <% end %>
 <br><br>
 <%= button_to 'Create a Topic', new_topic_path, method: :get %>
+<% end %>
