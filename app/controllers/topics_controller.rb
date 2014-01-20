@@ -53,10 +53,6 @@ class TopicsController < ApplicationController
     params.require(:topic).permit(:title, :description, :category)
   end
 
-  def user_signed_in
-    redirect_to root_path, notice: 'Must sign in!' if current_user == nil
-  end
-
   def user_made_post
     set_topic
     redirect_to root_path, notice: 'Not your post!' if @topic.user != current_user

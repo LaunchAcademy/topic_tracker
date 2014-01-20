@@ -9,7 +9,7 @@ TopicTracker::Application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :topics, only: [:index]
+      resources :topics, only: [:index, :create]
     end
   end
 

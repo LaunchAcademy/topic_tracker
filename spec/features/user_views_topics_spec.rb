@@ -10,6 +10,7 @@ feature 'User views a topic', %q{
     topic3 = FactoryGirl.create(:topic)
 
     visit root_path
+    click_on 'Sign In With GitHub'
 
     expect(page).to have_content topic1.title
     expect(page).to have_content topic2.title

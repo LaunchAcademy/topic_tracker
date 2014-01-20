@@ -3,3 +3,6 @@
 {{#each topic in controller}}
   <h3>{{topic.title}}</h3>
 {{/each}}
+{{#link-to 'topics.new'}}Create a Topic{{/link-to}}
+
+{{outlet}}

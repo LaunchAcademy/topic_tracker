@@ -1,3 +1,4 @@
 export default DS.Model.extend({
-  title: DS.attr()
+  title: DS.attr(),
+  description: DS.attr()
 });

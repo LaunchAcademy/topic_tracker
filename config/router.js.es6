@@ -1,7 +1,7 @@
 var Router = Ember.Router.extend();
 
 Router.map(function() {
-  this.resource('topics', { path: '/' }, function() {
+  this.resource('topics', function() {
     this.route('new');
   });
 });
