@@ -1,8 +1,10 @@
-<label for='title'>Title: </label>
-{{input value=title name='title'}}
-<label for='description'>Description: </label>
-{{input value=description name='description'}}
+{{#form-for controller}}
+  {{input title}}
+  {{input description}}
+  {{submit}}
+{{/form-for}}
 <button {{action 'save' model}}>Create Topic</button>
 <br>
 {{#link-to 'topics.index'}}Go Back{{/link-to}}
+
 
