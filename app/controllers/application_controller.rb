@@ -13,4 +13,9 @@ class ApplicationController < ActionController::Base
   def user_signed_in
     render status: :forbidden if current_user.nil?
   end
+
+  def user_made_post
+    set_topic
+    redirect_to root_path, notice: 'Not your post!' if @topic.user != current_user
+  end
 end

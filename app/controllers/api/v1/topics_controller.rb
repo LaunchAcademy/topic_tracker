@@ -1,5 +1,6 @@
 class Api::V1::TopicsController < ApplicationController
   before_filter :user_signed_in
+  before_filter :user_made_post, only: [:edit, :update, :destroy]
   respond_to :json
 
   def index

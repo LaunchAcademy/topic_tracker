@@ -1,7 +1,8 @@
 <h1>Current Topics</h1>
 
 {{#each topic in controller}}
-  <h3>{{topic.title}}</h3>
+  <h3>{{topic.title}}
+  <strong>EDIT BUTTON HERE</strong></h3><br>
 {{/each}}
 {{#link-to 'topics.new'}}Create a Topic{{/link-to}}
 
